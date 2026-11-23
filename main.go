@@ -43,9 +43,17 @@ func main() {
 	var progress int
 	var responseIndex int
 	state := Start
+
 	for {
 		switch state {
 		case Start:
+			waitCh := make(chan struct{})
+			go func() {
+				set.waitForAnyButton(true)
+				var send struct{}
+				waitCh <- send
+			}()
+
 			for {
 				select {
 				case time := <-ticker.C:
@@ -54,11 +62,7 @@ func main() {
 					} else {
 						set.lightsOff()
 					}
-				case event := <-set[0].buttonCh:
-					if !event.down {
-						continue
-					}
-
+				case <-waitCh:
 					buttons = GeneratePattern(set, gameLength)
 					progress = 0
 					responseIndex = 0
