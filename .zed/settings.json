@@ -1,0 +1,19 @@
+{
+  "lsp": {
+    "gopls": {
+      "settings": {
+        "gopls": {
+          "buildFlags": [
+            "-tags=xtensa,baremetal,linux,arm,esp32,esp,espradio,esp32_coreboard_v2,tinygo,purego,osusergo,math_big_pure_go,gc.conservative,scheduler.tasks,serial.uart,tinygo.unicore"
+          ],
+          "env": {
+            "GOARCH": "arm",
+            "GOARM": "6",
+            "GOOS": "linux",
+            "GOROOT": "/home/a/.cache/tinygo/goroot-f1be0b56ecaf0512224b141659fbc993a9aadb1a6c45ee098144de23e62ded86"
+          }
+        }
+      }
+    }
+  }
+}

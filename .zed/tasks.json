@@ -1,0 +1,73 @@
+[
+	{
+		"label":   "TinyGo: Build (esp32-coreboard-v2)",
+		"command": "tinygo",
+		"args": [
+			"build",
+			"-target=esp32-coreboard-v2",
+			"."
+		],
+		"cwd": "$ZED_WORKTREE_ROOT",
+		"env": {
+			"ZED_TINYGO_MANAGED": "1"
+		},
+		"save": "all"
+	},
+	{
+		"label":   "TinyGo: Test",
+		"command": "tinygo",
+		"args": [
+			"test",
+			"./..."
+		],
+		"cwd": "$ZED_WORKTREE_ROOT",
+		"env": {
+			"ZED_TINYGO_MANAGED": "1"
+		},
+		"save": "all"
+	},
+	{
+		"label":   "TinyGo: Size report (esp32-coreboard-v2)",
+		"command": "tinygo",
+		"args": [
+			"build",
+			"-target=esp32-coreboard-v2",
+			"-size=short",
+			"."
+		],
+		"cwd": "$ZED_WORKTREE_ROOT",
+		"env": {
+			"ZED_TINYGO_MANAGED": "1"
+		},
+		"save": "all"
+	},
+	{
+		"label":   "TinyGo: Allocation report (esp32-coreboard-v2)",
+		"command": "tinygo",
+		"args": [
+			"build",
+			"-target=esp32-coreboard-v2",
+			"-print-allocs=.*",
+			"."
+		],
+		"cwd": "$ZED_WORKTREE_ROOT",
+		"env": {
+			"ZED_TINYGO_MANAGED": "1"
+		},
+		"save": "all"
+	},
+	{
+		"label":   "TinyGo: Flash (esp32-coreboard-v2)",
+		"command": "tinygo",
+		"args": [
+			"flash",
+			"-target=esp32-coreboard-v2",
+			"."
+		],
+		"cwd": "$ZED_WORKTREE_ROOT",
+		"env": {
+			"ZED_TINYGO_MANAGED": "1"
+		},
+		"save": "all"
+	}
+]
