@@ -1,4 +1,4 @@
-module bearlabs/gophersays
+module github.com/bearlaboratories/gophersays
 
 go 1.27.4
 
